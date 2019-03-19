@@ -15,7 +15,7 @@ pipeline {
                 environment name: 'EXECUTE', value: 'True'
                 }
                 steps {
-                    sh ' echo "Success" '
+                    sh ' echo "Updating Second Stage" '
                 }
             }
  
@@ -24,7 +24,7 @@ pipeline {
                 environment name: 'EXECUTE', value: 'False'
                 }
                 steps {
-                    sh ' echo "Step 3" '
+                    sh ' echo "Updating Third Stage" '
                 }
             }
         }
