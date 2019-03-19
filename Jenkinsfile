@@ -3,14 +3,16 @@ pipeline {
         stages {
             stage('First') {
                 steps {
-                    sh ' echo "Step One" '
+                    sh ' echo "Step One" '{
+                        EXECUTE = "True"
+                    }
                 }
             }
  
  
             stage('Second') {
                 steps {
-                    sh ' echo "Step Two" '
+                    sh ' Updating Second Stage '
                 }
             }
  
