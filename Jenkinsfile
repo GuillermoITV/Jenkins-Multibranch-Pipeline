@@ -3,7 +3,7 @@ pipeline {
         stages {
             stage('First') {
                 steps {
-                    sh ' echo "Step 1" '{
+                    script {
                       env.EXECUTE="True"
                     }
                 }
@@ -13,13 +13,16 @@ pipeline {
             stage('Second') {
                  when {
                 environment name: 'EXECUTE', value: 'True'
-            }
+                }
                 steps {
                     sh ' echo "Success" '
                 }
             }
  
             stage('Third') {
+                when {
+                environment name: 'EXECUTE', value: 'False'
+                }
                 steps {
                     sh ' echo "Step 3" '
                 }
